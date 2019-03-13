@@ -36,6 +36,8 @@ if __name__ == '__main__':
 
     print(Pessoa.olhos)
     print(jacir.olhos)
+    jacir.olhos = 3
+    print(jacir.__dict__)
 
 
 
