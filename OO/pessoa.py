@@ -18,14 +18,19 @@ if __name__ == '__main__':
     print(jacir.cumprimentar())
     print(jacir.nome)
 
+    for filho in jacir.filhos:
+        print(filho.nome)
+
 
     # atributos dinâmicos - criados em tempo de execução
 
     jacir.sobrenome = 'Pieniak'
     print(jacir.sobrenome)
+
+    # deleta o atributo dinâmico em tempo de execução
     del jacir.sobrenome
 
 
 
-    for filho in jacir.filhos:
-        print(filho.nome)
+
+
