@@ -26,9 +26,11 @@ if __name__ == '__main__':
 
     jacir.sobrenome = 'Pieniak'
     print(jacir.sobrenome)
-
+    print(jacir.__dict__)
     # deleta o atributo dinâmico em tempo de execução
     del jacir.sobrenome
+    print(jacir.__dict__)
+
 
 
 
