@@ -10,6 +10,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    #metodos de Classe
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 
 if __name__ == '__main__':
     sofia = Pessoa(nome='Sofia')
@@ -34,10 +42,21 @@ if __name__ == '__main__':
     del jacir.sobrenome
     print(jacir.__dict__)
 
+#teste atributos de classe
+
     print(Pessoa.olhos)
     print(jacir.olhos)
     jacir.olhos = 3
     print(jacir.__dict__)
+
+#teste metodos de classe
+
+    print(id(Pessoa.olhos), id(jacir.olhos))
+    print(Pessoa.metodo_estatico(), jacir.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), jacir.nome_e_atributos_de_classe())
+
+
+
 
 
 
