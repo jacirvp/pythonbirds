@@ -1,5 +1,4 @@
 class Pessoa:
-
     olhos = 2
 
     def __init__(self, *filhos, nome=None, idade=35):
@@ -10,7 +9,7 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
-    #metodos de Classe
+    # metodos de Classe
     @staticmethod
     def metodo_estatico():
         return 42
@@ -19,11 +18,16 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
     sofia = Pessoa(nome='Sofia')
     valentina = Pessoa(nome="Valentina")
-    jacir = Pessoa(sofia, nome='Jacir')
-    jacir = Pessoa(valentina, nome = 'Jacir')
+    jacir = Homem(sofia, nome='Jacir')
+    jacir = Pessoa(valentina, nome='Jacir')
     print(Pessoa.cumprimentar(jacir))
     print(id(jacir))
     print(jacir.cumprimentar())
@@ -31,7 +35,6 @@ if __name__ == '__main__':
 
     for filho in jacir.filhos:
         print(filho.nome)
-
 
     # atributos dinâmicos - criados em tempo de execução
 
@@ -42,26 +45,20 @@ if __name__ == '__main__':
     del jacir.sobrenome
     print(jacir.__dict__)
 
-#teste atributos de classe
+    # teste atributos de classe
 
     print(Pessoa.olhos)
     print(jacir.olhos)
     jacir.olhos = 3
     print(jacir.__dict__)
 
-#teste metodos de classe
+    # teste metodos de classe
 
     print(id(Pessoa.olhos), id(jacir.olhos))
     print(Pessoa.metodo_estatico(), jacir.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), jacir.nome_e_atributos_de_classe())
 
+    # teste Herança
 
-
-
-
-
-
-
-
-
-
+    print(isinstance(sofia, Pessoa))
+    print(isinstance())
