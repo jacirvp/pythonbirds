@@ -22,12 +22,15 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 3
+
 
 if __name__ == '__main__':
     sofia = Pessoa(nome='Sofia')
     valentina = Pessoa(nome="Valentina")
     jacir = Homem(sofia, nome='Jacir')
-    jacir = Pessoa(valentina, nome='Jacir')
+    jacir = Mutante(nome='Jacir')
     print(Pessoa.cumprimentar(jacir))
     print(id(jacir))
     print(jacir.cumprimentar())
@@ -41,6 +44,7 @@ if __name__ == '__main__':
     jacir.sobrenome = 'Pieniak'
     print(jacir.sobrenome)
     print(jacir.__dict__)
+
     # deleta o atributo dinâmico em tempo de execução
     del jacir.sobrenome
     print(jacir.__dict__)
@@ -49,7 +53,6 @@ if __name__ == '__main__':
 
     print(Pessoa.olhos)
     print(jacir.olhos)
-    jacir.olhos = 3
     print(jacir.__dict__)
 
     # teste metodos de classe
@@ -61,4 +64,7 @@ if __name__ == '__main__':
     # teste Herança
 
     print(isinstance(sofia, Pessoa))
-    print(isinstance())
+    print(isinstance(jacir, Homem))
+
+    #teste de sobrescrita de atributo de dados
+    print(jacir.olhos)

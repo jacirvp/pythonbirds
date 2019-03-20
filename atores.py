@@ -133,6 +133,7 @@ class Passaro(Ator):
 
 
 class PassaroAmarelo(Passaro):
+
     pass
 
 
