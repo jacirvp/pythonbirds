@@ -7,7 +7,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     # metodos de Classe
     @staticmethod
@@ -20,7 +20,9 @@ class Pessoa:
 
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Aperto de mão'
 
 class Mutante(Pessoa):
     olhos = 3
@@ -30,7 +32,7 @@ if __name__ == '__main__':
     sofia = Pessoa(nome='Sofia')
     valentina = Pessoa(nome="Valentina")
     jacir = Homem(sofia, nome='Jacir')
-    jacir = Mutante(nome='Jacir')
+    #jacir = Mutante(nome='Jacir')
     print(Pessoa.cumprimentar(jacir))
     print(id(jacir))
     print(jacir.cumprimentar())
@@ -67,4 +69,9 @@ if __name__ == '__main__':
     print(isinstance(jacir, Homem))
 
     #teste de sobrescrita de atributo de dados
+
     print(jacir.olhos)
+
+    # Teste sobrescrita de métodos.
+    print(sofia.cumprimentar())
+    print(jacir.cumprimentar())
